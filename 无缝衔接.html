@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style: none;
+        }
+      div{
+          width:300px;
+          height:300px;
+          margin:100px auto;
+          position: relative;
+          overflow: hidden;
+      }
+      ul{
+          position: absolute;
+          width: 500%;
+          top:0;
+          left:0;
+      }
+      li{
+          width:300px;
+          height: 200px;
+          float: left;
+      }
+      img{
+          height: 100%;
+          width: 100%;
+      }
+      @keyframes run {
+          from{
+              left:0
+          }
+          to{
+             left:-1200px;
+          }
+      }
+     ul{
+         animation:run 3s infinite linear;
+     }
+    </style>
+</head>
+<body>
+    <div>
+      <ul>
+        <li>
+            <img src="img/1.webp" alt="">
+        </li>
+        <li>
+            <img src="img/2.webp" alt="">
+        </li>
+        <li>
+            <img src="img/3.webp" alt="">
+        </li>
+        <li>
+            <img src="img/4.jpg" alt="">
+        </li>
+        <li>
+            <img src="img/5.webp" alt="">
+        </li>
+        
+      </ul>
+   </div>
+</body>
+</html>
