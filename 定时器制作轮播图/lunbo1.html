@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style: none;
+        }
+     .lunbo1{
+         width:600px;
+         height:300px;
+         margin:100px auto;
+         overflow: hidden;
+     }
+     ul{
+         width:600%;
+     }
+     li{
+         float: left;
+     }
+     img{
+         width: 600px;
+         height:300px;
+     }
+   </style>
+</head>
+<body>
+    <div class="lunbo1">
+        <ul>
+            <li>
+                <img src="img/1.webp" alt="">
+            </li>
+            <li>
+                <img src="img/2.webp" alt="">
+            </li>
+            <li>
+                <img src="img/3.webp" alt="">
+            </li>
+            <li>
+                <img src="img/4.jpg" alt="">
+            </li>
+            <li>
+                <img src="img/5.webp" alt="">
+            </li>
+            <li>
+                <img src="img/1.webp" alt="">
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+ var ul=document.querySelectorAll('ul')[0];
+ var index=0;
+ setInterval(function(){
+    index++;
+    if(index==6){
+            index=1;
+            trans(0,0);
+    }
+    // setTimeout(function(){
+    ul.offsetHeight; 
+     trans(.5,index);
+    // },16.7)
+   
+ },1000)
+  function trans(time,i){
+      ul.style.transition='all '+ time+'s';
+      ul.style.transform='translate(-'+i*600+'px)';
+  }
+</script>
+</html>
