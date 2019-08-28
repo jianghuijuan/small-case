@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style: none;
+            font-style: normal;
+        }
+      .pic,.bottom{
+          width:350px;
+          background-color: #F7F8F9;
+      }
+      .blue-line{
+          width:5px;
+          height:25px;
+          display: inline-block;
+          background-color:deepskyblue;
+      }
+      span{
+          display: inline-block;
+          width:170px;
+      }
+      .le{
+          margin:0px 5px 10px 20px;
+          vertical-align: top;
+      }
+      ul{
+          padding-left:20px;
+      }
+      .img3{
+          vertical-align: super;
+      }
+      i{
+          padding-left:10px;
+      }
+      .bottom{
+          margin-top:20px;
+      }
+    </style>
+</head>
+<body>
+     <div class="pic">
+         <div class="blue-line"></div>
+     </div>
+     <div class="bottom"></div>
+</body>
+<script>
+ var pic=document.querySelector('.pic');
+ var bottom=document.querySelector('.bottom');
+ var img=create('img');
+ img.src='images/1.png';
+ pic.appendChild(img);
+ var br=create('br');
+ pic.appendChild(br);
+ var img1=create('img');
+ img1.className='le';
+ img1.src='./images/0.webp';
+ img1.style.width='140px';
+ img1.style.height='90px';
+ pic.appendChild(img1);
+ var span=create('span');
+ span.innerHTML="&nbsp &nbsp“詹姆斯儿子辱华”？别被辱华这两个字轻易带节奏";
+ pic.appendChild(span);
+ 
+ var ul=create('ul');
+ console.log(ul);
+ var arr=['傅园慧成绩下滑因上综艺？请理解运动员的选择',
+          '能培养奥数冠军，为何培养不出一流数学家',
+          '强迫“职业假笑”：对员工是伤害，对顾客是愚弄',
+          '先救人还是先报警？这并不是“追尾铲车”问题的关键'];
+          for(var i=0;i<arr.length;i++){
+            var img3=create('img');
+            img3.src='images/4.png';
+            img3.className='img3';
+            var ie=create('i');
+            ie.innerHTML=arr[i];
+            var li=create('li');       
+            li.appendChild(img3);
+            li.appendChild(ie);
+          
+            ul.appendChild(li);
+          }
+          pic.appendChild(ul);
+ function create(ele){
+     return document.createElement(ele);
+ }
+
+ var img=create('img');
+ img.src='images/2.png';
+ bottom.appendChild(img);
+ var br=create('br');
+ bottom.appendChild(br);
+ var img1=create('img');
+ img1.className='le';
+ img1.src='./images/1.webp';
+ img1.style.width='140px';
+ img1.style.height='90px';
+ bottom.appendChild(img1);
+ var span=create('span');
+ span.innerHTML="&nbsp &nbsp“詹姆斯儿子辱华”？别被辱华这两个字轻易带节奏";
+ bottom.appendChild(span);
+ 
+ var ul=create('ul');
+ console.log(ul);
+ var arr=['傅园慧成绩下滑因上综艺？请理解运动员的选择',
+          '能培养奥数冠军，为何培养不出一流数学家',
+          '强迫“职业假笑”：对员工是伤害，对顾客是愚弄',
+          '先救人还是先报警？这并不是“追尾铲车”问题的关键'];
+  
+          for(var i=0;i<arr.length;i++){
+            var img3=create('img');
+            img3.src='images/4.png';
+            img3.className='img3';
+            var ie=create('i');
+            ie.innerHTML=arr[i];
+            var li=create('li');       
+            li.appendChild(img3);
+            li.appendChild(ie);
+          
+            ul.appendChild(li);
+          }
+          bottom.appendChild(ul);
+</script>
+</html>
