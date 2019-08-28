@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .memo {
+            width: 500px;
+            margin: 100px auto;
+            border: 1px solid #ccc;
+            border-radius: 30px;
+        }
+
+        .input-text {
+            margin: 20px;
+        }
+
+        input {
+
+            width: 360px;
+            height: 48px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            outline: none;
+            font-size: 20px;
+            padding-left: 10px;
+        }
+
+        button {
+            width: 80px;
+            height: 52px;
+            background: #fff;
+            vertical-align: middle;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            color: #aaa;
+            font-size: 20px;
+            outline: none;
+        }
+
+        li {
+            list-style: none;
+            height: 20px;
+            line-height: 20px;
+            padding: 20px;
+            position: relative;
+        }
+        .cancel{
+            position: absolute;
+            top:0;
+            bottom: 0;
+            margin: auto;
+            right: 25px;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            border-radius: 50%;
+            border: 1px solid #ccc;
+            text-align: center;
+            color: #aaa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="memo">
+        <div class="input-text">
+            <input type="text">
+            <button onclick="add()">记下</button>
+        </div>
+        <ul class="memo-content">
+
+        </ul>
+    </div>
+    <!-- <ul class="memo">
+
+    </ul> -->
+    <script>
+        var $ = function (selector){
+            return document.querySelectorAll(selector);
+        }
+        var oInput = $('input')[0]
+        var getEle = function (tagName){
+            return document.createElement(tagName);
+        }
+        var getText = function (text){
+            return document.createTextNode(text);
+        }
+        var oMemo = $('.memo')[0];
+        var oUl = $('.memo-content')[0];
+
+        function add(){
+            var aLi = $('li');
+            var oLi = getEle('li');
+            var cancel = getEle('div');
+            cancel.className = 'cancel';
+            cancel.append('X');
+            var text = getText(oInput.value);
+            oLi.appendChild(text);
+            oLi.appendChild(cancel);
+            if(aLi.length == 0){
+                oUl.appendChild(oLi);
+            }else{
+                oUl.insertBefore(oLi,aLi[0]);
+            }
+        }
+
+
+        oUl.onclick = function(e){
+            if(e.target.className == 'cancel'){
+                var oLi = e.target.parentNode;
+                oUl.removeChild(oLi);
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
