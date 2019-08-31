@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .box {
+            width: 500px;
+            margin: 100px auto;
+            border-radius: 50px;
+            border: 1px solid #999;
+            padding: 40px;
+        }
+
+        li {
+            color: orange;
+            font-size: 20px;
+            padding-left: 20px;
+        }
+
+        input {
+            padding-left: 20px;
+            color: orange;
+            width: 400px;
+            outline: none;
+            border: 1px solid #444;
+            line-height: 40px;
+            font-size: 20px;
+            border-radius: 20px;
+        }
+
+        button {
+            outline: none;
+            border-radius: 20px;
+            width: 50px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+        }
+        li{
+            position: relative;
+            line-height: 40px;
+            background-color: aquamarine;
+        }
+        ul div{
+            cursor: pointer;
+            border:1px solid #ccc;
+            position: absolute;
+            top:50%;
+            box-sizing: border-box;
+            right: 25px;
+            transform: translateY(-50%);
+            width:20px;
+            height:20px;
+            line-height: 16px;
+            text-align: center;    
+            border-radius: 50%                                                                                                                                                                    
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <input type="text">
+        <button>记下</button>
+        <ul></ul>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+    $('ul').on('click','div',function(){
+        var b=$(this).parent();
+         $('ul')[0].removeChild(b[0]);             
+    })
+    $('button').click(function () {
+        var value = $('input').val().trim();
+
+        if (value) {
+            var x='<div>X</div>';
+            var li = '<li>' + value + x+'</li>';
+            // li.append(x);
+
+            if ($('li').length == 0) {
+                $('ul').append(li);
+            } else {
+                $('li').eq(0).before(li);
+            }
+            $('input').val('');
+        }
+
+    })
+    //  $()
+    $("input").keyup(function (e) {
+        if (e.keyCode == 13) {
+            $('button').trigger('click');
+        }
+
+    });
+</script>
+
+</html>
