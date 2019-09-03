@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .box {
+            width: 300px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+            border-radius: 10px;
+            padding-left: 10px;
+        }
+
+        li {
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <ul>
+            <li>
+                <input type="checkbox" class="a">
+                <span>全选</span>
+                <span class="fan">反选</span>
+            </li>
+            <li>
+                <input type="checkbox" class="items">
+                <span>选项1</span>
+            </li>
+            <li>
+                <input type="checkbox" class="items">
+                <span>选项2</span>
+            </li>
+            <li>
+                <input type="checkbox" class="items">
+                <span>选项3</span>
+            </li>
+            <li>
+                <input type="checkbox" class="items">
+                <span>选项4</span>
+            </li>
+            <li>
+                <input type="checkbox" class="items">
+                <span>选项5</span>
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+    var a = document.querySelector('.a');
+    var fan = document.querySelector('.fan');
+    var items = document.querySelectorAll('.items');
+    //全选
+    a.onclick = function () {
+        for (var i = 0; i < items.length; i++) {
+            items[i].checked = this.checked;
+        }
+    }
+    //选项
+    for (var j = 0; j < items.length; j++) {
+        items[j].onclick = function () {
+            add();
+        }
+    }
+    //反选
+    fan.onclick = function () {
+        for (var i = 0; i < items.length; i++) {
+            items[i].checked = !items[i].checked;
+        }
+        add();
+    }
+
+    function add() {
+        var num = 0;
+        for (var k = 0; k < items.length; k++) {
+            if (items[k].checked) {
+                num++;
+            }
+        }
+        if (num == items.length) {
+            a.checked = true;
+        } else {
+            a.checked = false;
+        }
+    }
+</script>
+
+</html>
