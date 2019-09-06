@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        ul {
+            position: fixed;
+            bottom: 200px;
+            /* position: sticky; */
+            left: 300px;
+            border: 1px solid #999;
+            border-radius: 5px;
+
+        }
+
+        ul li {
+            line-height: 50px;
+            width: 50px;
+            text-align: center;
+            border-bottom: 1px solid #999;
+        }
+
+        ul li:last-child {
+            border: none;
+        }
+
+        #box {
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        #box div {
+            height: 900px;
+        }
+
+        .action {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+</body>
+<ul>
+    <li>选项*1</li>
+    <li>选项*2</li>
+    <li>选项*3</li>
+    <li>选项*4</li>
+    <li>选项*5</li>
+    <li>选项*6</li>
+    <li>选项*7</li>
+</ul>
+<div id="box">
+    <div class="jingxuan" style="background-color: blue">选项*1</div>
+    <div class="nv" style="background-color:red ">选项*2</div>
+    <div class="nan" style="background-color:#ccc ">选项*3</div>
+    <div class="run" style="background-color: purple">选项*4</div>
+    <div class="decr" style="background-color: pink">选项*5</div>
+    <div class="mei" style="background-color: palevioletred">选项*6</div>
+    <div class="mother" style="background-color: peru">选项*7</div>
+
+</div>
+<script src="./jquery-1.12.1.js"></script>
+<script>
+    $(function () {
+        function item(){
+            $('#box div').each(function(i,e){
+           if($(e).offset().top-$(window).scrollTop()<100){
+              
+               $('li').eq(i).addClass('action').siblings().removeClass('action');
+           }
+        })
+
+        }
+     
+       item();
+        $(window).scroll(function(){
+           item();
+        })
+    })
+
+    $('li').click(function(){
+        var index=$(this).index();
+        var top=$('#box div').eq(index).offset().top;
+        $('html').animate({'scrollTop':top});
+    })
+</script>
+
+</html>
