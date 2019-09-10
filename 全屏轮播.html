@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .box {
+            overflow: hidden;
+            position: relative;
+            height:565px;
+        }
+
+        ul {
+            overflow: hidden;
+            position:absolute;
+            height:565px;
+        }
+
+        li {
+            float: left;
+            background-size: 1920px 100%;
+            background-position: center;
+            height: 565px;
+        }
+
+        .li1 {
+            background-image: url('./images/1.jpg');
+        }
+
+        .li2 {
+            background-image: url('./images/2.jpg');
+        }
+
+        .box>span {
+            position: absolute;
+            padding: 30px;
+            border-radius: 50%;
+            top: calc(565px / 2 - 38px);
+            background-color: rgba(255, 255, 255, .6);
+        }
+
+        .left {
+            left: 150px;
+        }
+
+        .right {
+            right: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <ul>
+            <li class="li1"></li>
+            <li class="li2"></li>
+        </ul>
+        <span class="left">上</span>
+        <span class="right">下</span>
+    </div>
+</body>
+<script src="./jquery-1.12.1.js"></script>
+<script>
+    var w;
+    function text() {
+        w = $(window).width();
+        $('li').css('width', w);
+        $('ul').css('width', $('li').length * w);
+    }
+    text();
+    $(window).resize(function () {
+        text();
+    })
+    $('.left').click(function(){
+      $('li').last().prependTo('ul');
+      $('ul').css('left',-w);
+      $('ul').animate({left:0},400);
+    })
+
+   $('.right').click(function(){
+       $('ul').animate({left:-w},400,function(){
+           $('li').first().appendTo($('ul'));
+           $('ul').css('left',0);
+       });
+   })
+    
+
+   var time=setInterval(function(){
+        $('.right').click();
+    },1000)
+
+    $('.box').hover(function(){
+        $('span').animate({opacity:1},300);
+        clearInterval(time);
+    },function(){
+        $('span').animate({opacity:0},300);
+        time=setInterval(function(){
+        $('.right').click();
+    },1000)
+    })
+  
+
+</script>
+
+</html>
