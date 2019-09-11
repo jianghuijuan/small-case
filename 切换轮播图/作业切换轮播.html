@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .box {
+            box-sizing: border-box;
+            width: 902px;
+            border: 1px solid #000;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .box div {
+            line-height: 200px;
+            text-align: center;
+        }
+
+        .box a {
+            text-decoration: none;
+            border: 1px solid #333;
+            padding: 5px 10px;
+            margin: 0 10px;
+            border-radius: 10px;
+        }
+
+        .box ul {
+            overflow: hidden;
+            position: relative;
+            left: 0;
+            width: calc(304px * 13);
+            display: none;
+        }
+
+        .ul1>li {
+            border: 1px solid red;
+            color: red;
+        }
+
+        .box .ul1 {
+            display: block;
+        }
+
+        .ul2>li {
+            border: 1px solid blue;
+            color: blue;
+        }
+
+        
+        .ul3>li {
+            border: 1px solid #0f0;
+            color: #0f0;
+        }
+
+        .box li {
+            box-sizing: border-box;
+            float: left;
+            width: 300px;
+            height: 400px;
+            font-size: 100px;
+            line-height: 400px;
+            text-align: center;
+        }
+
+        span {
+            position: absolute;
+            border: 1px solid #333;
+            padding: 5px 10px;
+            top: 330px;
+        }
+
+        .left {
+            left: -100px;
+        }
+
+         .right {
+            right: -100px;
+        }
+        .big_box{
+            position: relative;
+            width: 905px;
+            margin:0 auto;
+        }
+        .box .active{
+            background-color: yellowgreen;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='big_box'>
+    <div class="box">
+        <div>
+            <a href="javascript:" class="active">第1个</a>
+            <a href="javascript:">第2个</a>
+            <a href="javascript:">第3个</a>
+        </div>
+        <ul class="ul1">
+            <li>01</li>
+            <li>02</li>
+            <li>03</li>
+            <li>04</li>
+            <li>05</li>
+            <li>06</li>
+            <li>07</li>
+            <li>08</li>
+            <li>09</li>
+            <li>10</li>
+            <li>01</li>
+            <li>02</li>
+            <li>03</li>
+        </ul>
+        <ul class="ul2">
+            <li>01</li>
+            <li>02</li>
+            <li>03</li>
+            <li>04</li>
+            <li>05</li>
+            <li>06</li>
+            <li>07</li>
+            <li>08</li>
+            <li>09</li>
+            <li>10</li>
+            <li>01</li>
+            <li>02</li>
+            <li>03</li>
+        </ul>
+        <ul class="ul3">
+            <li>01</li>
+            <li>02</li>
+            <li>03</li>
+            <li>04</li>
+            <li>05</li>
+            <li>06</li>
+            <li>07</li>
+            <li>08</li>
+            <li>09</li>
+            <li>10</li>
+            <li>01</li>
+            <li>02</li>
+            <li>03</li>
+        </ul>
+    </div>
+        <span class="left">上一项</span>
+        <span class="right">下一张</span>
+    </div>
+</body>
+<script src="./jquery-1.12.1.js"></script>
+<script src="./切换轮播.js"></script>
+</html>
