@@ -1,0 +1,116 @@
+*{
+    margin:0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+.top1{
+    background-color: #242424;
+    height: 70px;
+    line-height: 70px;
+}
+.top1 .con{
+    height: 70px;
+    width: 1100px;
+    margin:0 auto;
+    line-height: 70px;
+}
+.top1 .con>div{
+    float: left;
+}
+.top1 .logo{
+    width: 176px;
+    height: 69px;
+    background: url('网易云图片/topbar.png') no-repeat 0 0;
+}
+.top1 .midd{
+    font-size: 0;
+}
+.top1 .midd>a{
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+    float: left;
+    padding: 0 20px;
+}
+.top1 .midd>a.active{
+    color:#fff;
+    background-color: #000;
+}
+.top1 .midd>a:hover{
+    color:#fff;
+    background-color: #000;
+}
+.top1 .midd>a:last-child{
+    position: relative;
+}
+.top1 .midd span{
+   position: absolute;
+   top:21px;
+   left:95px;
+   width: 28px;
+   height: 19px;
+   background: url('网易云图片/topbar.png') no-repeat -190px 0;
+}
+.top1 .inp{
+    width: 158px;
+    height: 32px;
+    position: relative;
+    margin-left:40px;
+    margin-top: 21px;
+}
+.top1 .inp input{
+   display: block;
+   box-sizing: border-box;
+   width: 158px;
+   height: 32px;
+   line-height: 32px;
+   border-radius: 30px;
+   outline: none;
+   padding-left: 32px;
+}
+.top1 .inp span{
+   position: absolute;
+   width: 30px;
+   height: 30px;
+   top:0;
+   left:0;
+   background: url('网易云图片/topbar.png') no-repeat 0 -99px;
+} 
+.top1 .cen span{
+    display: block;
+    margin:19px 0 0 12px;
+    width: 90px;
+    height: 32px;
+    border:1px solid #4F4F4F;
+    box-sizing: border-box;
+    line-height: 33px;
+    border-radius: 20px;
+    color:#ccc;
+    font-size: 12px;
+    padding-left:15px;
+    float: left;
+}
+.top1 .lo{
+    margin-left: 15px;
+}
+.top1 .lo a{
+    position: relative;
+    float: left;
+    color:#787878;
+    font-size: 12px;
+    position: relative;
+}
+
+.top1 .lo >a:hover{
+    text-decoration: underline;
+}
+.top1 .lo .arr{
+    position: absolute;
+    width: 13px;
+    height: 22px;
+    background: url('网易云图片/topbar.png') right -47px;
+    background-color: #242424;
+    top:19px;
+    left:30px;
+}
