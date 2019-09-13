@@ -31,7 +31,7 @@
     text-decoration: none;
     font-size: 14px;
     float: left;
-    padding: 0 20px;
+    padding: 0 15px;
 }
 .top1 .midd>a.active{
     color:#fff;
@@ -64,10 +64,10 @@
    box-sizing: border-box;
    width: 158px;
    height: 32px;
-   line-height: 32px;
+   line-height: 35px;
    border-radius: 30px;
    outline: none;
-   padding-left: 32px;
+   padding-left: 28px;
 }
 .top1 .inp span{
    position: absolute;
@@ -94,8 +94,8 @@
 .top1 .lo{
     margin-left: 15px;
 }
-.top1 .lo a{
-    position: relative;
+.top1 .lo >a{
+    position: absolute;
     float: left;
     color:#787878;
     font-size: 12px;
@@ -105,6 +105,10 @@
 .top1 .lo >a:hover{
     text-decoration: underline;
 }
+.top1 .lo .log:hover {
+  color:#666;
+}
+
 .top1 .lo .arr{
     position: absolute;
     width: 13px;
@@ -112,5 +116,178 @@
     background: url('网易云图片/topbar.png') right -47px;
     background-color: #242424;
     top:19px;
-    left:30px;
+    left:35px;
+}
+.top1 .lo .hid{
+    width: 158px;
+    height: 196px;
+    font-size: 12px;
+    position: absolute;
+    top:60px;
+    left:-45px;
+    background-color: #2b2b2b;
+    display: none;
+}
+.top1 .lo:hover .hid{
+    display:block;
+    z-index: 999;
+}
+.top1 .lo .hid>ul{
+  width: 158px;
+  box-sizing: border-box;
+  position: relative;
+}
+.top1 .lo .hid li{
+    width: 100%;
+    line-height:38px;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+.top1 .lo .hid li span{
+    padding-left: 10px;
+    color:#ccc;
+}
+.top1 .lo .hid .thr{
+    position: absolute;
+    top:-14px;
+    left:65px;
+    border:7px solid transparent;
+    border-bottom-color:#2b2b2b;
+}
+.top2{
+    background-color: #C20C0C;
+    border-bottom: 1px solid #a40011;
+    box-sizing: border-box;
+    font-size: 14px;
+    height: 35px;
+}
+.top2 .con{
+    width: 1100px;
+    height: 35px;
+    text-align: center;
+    margin: 0 auto;
+}
+.top2 .con >ul{
+    width: 812px;
+    overflow: hidden;
+    text-align: center;
+    margin: 0 auto;
+    padding-left: 55px;
+}
+.top2 .con li{
+    float: left;
+     line-height: 34px;
+     text-align: center;
+     font-size: 0;
+     height: 34px;
+}
+.top2 .con li span{
+    font-size: 14px;
+    margin: 0 25px;
+    padding: 0 16px;
+    color:#fff;
+}
+.top2 .con li span.active{
+    background-color: #9B0909;
+    border-radius: 15px;
+   
+}
+.top2 .con li span:hover{
+    background-color: #9B0909;
+    padding:0 16px;
+    border: 1px soid #9B0909;
+    border-radius: 15px;
+}
+.top2 .con .singer{
+    position:relative;
+}
+.top2 .con .login1{
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: url('网易云图片/white-r-icon@3x.png') no-repeat;
+    background-size: 8px 8px;
+    top:3px;
+    right:5px;
+}
+.lunbo{
+   height: 336px;
+   background-color:rgb(3,3,4);
+}
+.lunbo .con{
+    width: 982px;
+    height: 336px;
+    margin: 0 auto;
+    font-size: 0;
+    position:relative;
+}
+.lunbo .bo{
+    float: left;
+}
+
+.lunbo .fix{
+    float: left;
+    width: 252px;
+    height: 336px;
+    box-sizing: border-box;
+    border:1px solid #242424;
+    background-color: #000;
+}
+.lunbo .fix .to{
+    width: 252px;
+    height: 280px;
+    background-image: url('网易云图片/25.png');
+}
+.lunbo .fix .btm{
+    width: 252px;
+    font-size: 14px;
+    text-align: center;
+    color: #8d8d8d;
+    margin-top:5px;
+}
+.lunbo .con > span{
+    position: absolute;
+    width: 37px;
+    height: 63px;
+    top:50%;
+    transform:translateY(-50%);
+}
+.lunbo .con .left_arrow{
+    left:-68px;
+    background: url('网易云图片/banner.png') 0 -360px;
+}
+.lunbo .con .right_arrow{
+    right:-68px;
+    background: url('网易云图片/banner.png') 0 -508px;
+}
+.lunbo .con .right_arrow:hover{
+    background-position: 0 -578px;
+}
+.lunbo .con .left_arrow:hover{
+    background-position: 0 -430px;
+}
+.lunbo .con .sup{
+    position: absolute;
+    top:310px;
+    left:0;
+    width: 730px;
+    height: 20px;
+    text-align: center;
+}
+.lunbo .con .sup a:first-child{
+    background-position: -16px -343px;
+}
+.lunbo .con .sup>a{
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background: url('网易云图片/banner.png') no-repeat center;
+    background-position: 3px -343px;
+}
+.lunbo .con .sup>a:hover{
+    background-position: -16px  -343px;
+}
+.discover .con{
+    margin:0 auto;
+    width: 980px;
 }
