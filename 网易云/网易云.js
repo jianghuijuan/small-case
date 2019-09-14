@@ -42,7 +42,7 @@ $(function () {
             $('.lunbo .con .sup a').eq(index).css('backgroundPositionX', '-16px')
                 .siblings('a').css('backgroundPositionX', '3px');
             $('.lunbo .con .bo img').attr('src', arr[index].img);
-            $('.lunbo .con .bo img').animate({ 'opacity': 1 }, 400);
+            $('.lunbo .con .bo img').stop().animate({ 'opacity': 1 }, 400);
         }
         function item() {
             index++;

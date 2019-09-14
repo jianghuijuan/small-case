@@ -290,4 +290,117 @@
 .discover .con{
     margin:0 auto;
     width: 980px;
+    border:1px solid #d3d3d3;
+    border-width: 0 1px;
+    min-height: 700px;
+    background: url('./网易云图片/wrap1.png') repeat-y 100% 100%;
+}
+.discover .cover_left{
+    width: 730px;
+    box-sizing: border-box;
+    float:left;
+    padding:0 10px;
+}
+.discover .cover_right{
+    width: 250px;
+    box-sizing: border-box;
+    float:left;
+}
+.discover .cover_left .title{
+    height:40px;
+    margin-top:20px;
+    border-bottom: 3px solid rgb(212, 12, 12);
+}
+.discover .cover_left .title h2{
+  float: left;
+  font-weight: normal;
+  font-size: 20px;
+  padding-left: 35px;
+  margin-right:20px;
+  position: relative;
+}
+
+.discover .cover_left .title li{
+    float: left;
+    font-size: 14px;
+    color:#666;
+}
+
+.discover .cover_left .title a{
+   font-size: 14px;
+   float:right;
+   color:#666;
+   position: relative;
+   padding-right: 20px;
+} 
+.discover .cover_left .title li>span{
+    padding: 0 15px;
+    border-right: 1px solid #ccc;
+}
+.discover .cover_left .title li:last-child>span{
+    border:none;
+}
+.discover .cover_left .title h2 .hot1{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top:7px;
+    left:0;
+    background: url('./网易云图片/26.png') -225px -156px;
+}
+.discover .cover_left .title .to1{
+    height: 43px;
+    line-height: 40px;
+}
+.discover .cover_left .title a >span{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top:15px;
+    right:3px;
+    background: url('./网易云图片/26.png') 0 -240px;
+}
+.discover .cover_left .title a:hover{
+    text-decoration: underline;
+}
+.cover_left .pic{
+    margin-top: 30px;
+}
+.cover_left .pic li{
+    float: left;
+    width: 25%;
+    box-sizing: border-box;
+    padding-left: 14px;
+}
+.cover_left .pic li>div{
+    position:relative;
+}
+.cover_left .pic .bottom{
+    position: absolute;
+    width: 140px;
+    line-height: 28px;
+    bottom:0;
+    left:0;
+    color: #ccc;
+    cursor:text;
+    background:url('./网易云图片/coverall (1).png') no-repeat 0 -537px;
+}
+.cover_left .pic .bottom i:last-child{
+   float: right;
+   margin-right:9px;
+   font-size:20px;
+   cursor: pointer;
+}
+.cover_left .pic .bottom i:first-child{
+    margin-left: 13px;
+    font-size:14px;
+}
+.cover_left .pic p{
+    font-size: 14px;
+    color:#333;
+    margin:10px 0;
+}
+.cover_left .pic p:hover{
+    text-decoration: underline;
+    cursor: pointer;
 }
