@@ -76,4 +76,41 @@ $(function () {
             }, 2000)
         })
     })();
+    //推荐部分的轮播
+    (function(){
+        function text1(){
+            $('.cover_left .pict .ulp >ul li:first').appendTo('.cover_left .pict .ulp >ul');
+        }
+        function text2(){
+            $('.cover_left .pict .ulp >ul li:last').prependTo('.cover_left .pict .ulp >ul');
+        }
+        function item(){
+            $('.cover_left .pict .ulp >ul').animate({left:-w},400,function(){
+                text1();
+                text1();
+                text1();
+                text1();
+                text1();
+                $('.cover_left .pict .ulp >ul').css({left:0});
+            });
+        }
+        var w=$('.cover_left .reco .pict .ulp').width();
+        $('.cover_left .reco .pict .right_arrow').click(function(){
+           item();
+        });
+        $('.cover_left .reco .pict .left_arrow').click(function(){
+            text2();text2();text2();text2();text2();
+            $('.cover_left .pict .ulp >ul').css({left:-w});
+            $('.cover_left .pict .ulp >ul').stop().animate({left:0},400);
+        })
+    })();
+    //回到顶部
+    (function(){
+     $('.scroll1').click(function(){
+         $(window).scrollTop(0);
+     })
+    })();
 })
+
+
+ 
