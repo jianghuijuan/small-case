@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin:0;
+        padding:0;
+        list-style: none;
+    }
+    .box{
+        width: 200px;
+        margin-left: 20px;
+        margin-top: 10px;
+    }
+    p{
+        margin-left: 20px;
+        margin-top:80px;
+    }
+    span{
+        display: block;
+        margin-right:10px;
+        width: 19px;
+        height: 20px;
+        float: left;
+        background: url('./images/604d5129feb84d4e89b33d7aa638a18.jpg') 0 -28px;
+    }
+   
+    .active{
+        background-position: 0 0;
+    }
+    span.xing{
+        background-position: 0 -28px;
+    }
+    </style>
+</head>
+<body>
+    <p>点击星星进行评分：</p>
+    <div class="box">
+     <span></span>
+     <span></span>
+     <span></span>
+     <span></span>
+  </div>
+</body>
+<script src="./jquery.min.js"></script>
+<script>
+    var arr=['很差 1分','一般 2分','中等好评 3分','超级好评 4分'];
+  $('span').click(function(){
+    var index=$(this).index();
+    $(this).addClass('xing').removeClass('active').prevAll().addClass('xing').removeClass('active');
+    $(this).nextAll().removeClass('xing').addClass('active');
+    $('p').text('点击星星进行评分：'+arr[index]);
+  })
+</script>
+</html>
