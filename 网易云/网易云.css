@@ -125,6 +125,7 @@
     position: absolute;
     top:60px;
     left:-45px;
+    z-index:11111;
     background-color: #2b2b2b;
     display: none;
 }
@@ -212,7 +213,7 @@
 }
 .lunbo{
    position:relative;
-   z-index:999;
+   z-index:10;
    height:336px;
    background-color:rgb(3,3,4);
 }
@@ -921,8 +922,6 @@
     width: 49px;
     height: 44px;
     text-align: center;
+    display:none;
     background:url('./网易云图片/sprite.png') no-repeat -265px -47px;
-}
-.scroll1 span{
-    color:#333;
 }

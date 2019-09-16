@@ -106,6 +106,13 @@ $(function () {
     })();
     //回到顶部
     (function(){
+     $(window).scroll(function(){
+         if($(window).scrollTop()>300){
+             $('.scroll1').show();
+         }else{
+            $('.scroll1').hide();
+         }
+     });
      $('.scroll1').click(function(){
          $(window).scrollTop(0);
      })
