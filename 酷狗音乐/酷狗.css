@@ -1,0 +1,455 @@
+*{
+    margin:0;
+    padding: 0;
+    list-style: none;
+}
+.top1 >div{
+    height: 78px;
+    width: 1000px;
+    margin:0 auto;
+}
+.top1 >div>div{
+    float: left;
+}
+.top1 .logo{
+    width: 153px;
+    height: 37px;
+    background: url('./酷狗图片/logo.png');
+    margin-top: 20px;
+}
+.top1 .inp{
+   width: 300px;
+   height: 36px;
+   margin-left: 30px;
+   margin-top: 20px;
+   position: relative;
+   border:1px solid #ccc;
+   box-sizing: border-box;
+   line-height: 34px;
+   padding-left: 18px;
+}
+.top1 .inp::after{
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top:10px;
+    right:4px;
+    background: url('./酷狗图片/search.png') no-repeat -40px -56px;
+}
+.top1 .inp input{
+    border: none;
+    outline: none;
+}
+.top1 .ol{
+    margin-left: 50px;
+}
+.top1 .ol >ul{
+    overflow: hidden;
+}
+.top1 .ol li{
+    float: left;
+    line-height: 78px;
+    color:#666;
+    padding:0 20px;
+    font-size: 12px;
+}
+.top1 .ol li:hover{
+    color:blue;
+    text-decoration: underline;
+}
+.top1 .wh{
+    width: 50px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: skyblue;
+    color:#fff;
+    font-size: 13px;
+    margin-top: 25px;
+    margin-left: 40px;
+}
+.top1 .wh:hover{
+    background-color:darkblue;
+}
+.top2 {
+    height: 55px;
+    background-color: rgb(22, 2, 2);
+}
+.top2 >div{
+    width: 1000px;
+    margin:0 auto;
+}
+.top2>div>div{
+    float: left;
+}
+.top2 >div .right{
+    float: right;
+}
+.top2 .left li:last-child{
+    position: relative;
+}
+.top2 .left li:last-child::after{
+    position: absolute;
+    content: '';
+    background: url('./酷狗图片/arrowMored.png');
+    top:25px;
+    right:0;
+    width: 11px;
+    height: 6px;
+}
+.top2 .left li:last-child:hover::after{
+    background: url('./酷狗图片/arrowMoreu.png') ;
+}
+.top2 .left li{
+    float: left;
+    color:#ccc;
+    font-size: 17px;
+    height: 55px;
+    line-height: 55px;
+    padding: 0 20px;
+}
+.top2 .left li.active{
+   background-color: blue;
+}
+.top2 .left li:hover{
+  background-color: blue;
+}
+.top2 .right li{
+    margin-left: 20px;
+    padding: 0 20px;
+    float: left;
+    color:#ccc;
+    font-size: 14px;
+    position:relative;
+    height: 55px;
+    line-height: 55px;
+}
+.top2 .right li::after{
+    background: url('./酷狗图片/sprite.png') no-repeat 0 -119px;
+    content:'';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top:18px;
+    left: 0;
+}
+.top2 .right li:hover{
+    color:blue;
+}
+.top2 .right li:hover::after{
+    background-position: 0 -101px;
+}
+.lunbo{
+    position: relative;
+}
+.lunbo >ul li{
+  height: 500px;
+  background: url('./酷狗图片/1.jpg') center;
+  opacity: 1;
+}
+.lunbo span{
+    position: absolute;
+    width:60px;
+    display: none;
+    top:50%;
+    right: 0;
+    transform: translateY(-50%);
+    height: 120px;
+    background-color: #fff;
+    background: url('./酷狗图片/sprite.png') 0 -1130px;
+}
+.lunbo span.left_arrow{
+    background-position: 0 -755px;
+    left:0;
+}
+.lunbo .btt{
+    position: absolute;
+    width: 100%;
+    z-index: 8888;
+    bottom:0;
+    background-color: rgba(0,0,0,.3);
+    height: 64px;
+}
+.lunbo .btt ul{
+    position:absolute;
+    height: 64px;
+    width: 745px;
+    overflow: hidden;
+    margin:0 auto;
+    bottom: 0;
+    left: 50%;
+    line-height: 64px;
+    transform: translateX(-50%);
+}
+.lunbo .btt li{
+    color:#fff;
+    position:relative;
+    width: 33%;
+    text-align: center;
+    float: left;
+}
+.lunbo .btt li::after{
+    position: absolute;
+    top:20px;
+    left:45px;
+    content: '';
+    width: 130px;
+    height: 25px;
+    background: url('./酷狗图片/pc.png') no-repeat;
+}
+.lunbo .square{
+    position: absolute;
+    bottom:70px;
+    width: 100%;
+}
+.lunbo .square ul{
+    width: 270px;
+    margin:0 auto;
+    overflow: hidden;
+}
+.lunbo .square li{
+    float: left;
+    width: 20px;
+    height: 10px;
+    width: 10px;
+    margin-right: 20px;
+    font-size: 0;
+    text-align: center;
+    background-color: rgba(62, 62, 71, 0.2);
+    border-radius: 50%;
+}
+.lunbo .square li.active{
+    background-color: #fff;
+}
+.select >div{
+    width: 1000px;
+    margin:0 auto;
+}
+.select .top{
+    overflow: hidden;
+}
+.select .top .le {
+    width: 650px;
+    float: left;
+}
+.select .top .le .title{
+    height:100px;
+    line-height: 100px;
+}
+.select .top .le .title h3{
+    font-weight: 400;
+    color:#666;
+    font-size: 25px;
+    float: left;
+}
+.select .top .le .title h3 span{
+    color: blue;
+}
+.select .top .le .title a{
+    float: right;
+    color:#666;
+    line-height: 100px;
+    font-size: 12px;
+    text-decoration: none;
+}
+.select .top .le .main{
+    overflow: hidden;
+}
+.select .top .le .main .l{
+  width: 325px;
+  height: 325px;
+  position: relative;
+  float: left;
+}
+.select .top .le .main .l img{
+    width: 325px;
+    height: 325px;
+}
+.select .top .le .main .l .bo{
+ height: 40px;
+ width: 100%;
+ font-size: 14px;
+ position: absolute;
+ color:#ccc;
+ padding-left: 10px;
+ box-sizing: border-box;
+ bottom: 0;
+ background-color: rgba(37, 35, 35, 0.3);
+}
+.select .top .le .main .l::after{
+    content: '';
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    background: url('./酷狗图片/sprite.png') no-repeat 0 -401px;
+    bottom:10px;
+    right:20px;
+    z-index: 333;
+    display: none;
+}
+.select .top .le .main .l:hover::after{
+    display: block;
+}
+.select .top .le .main .l>span{
+    position:absolute;
+    width: 53px;
+    height: 15px;
+    font-size: 12px;
+    top:5px;
+    right:0;
+    color: #fff;
+    padding-left: 10px;
+}
+.select .top .le .main .l>span::after{
+    content: '';
+    position: absolute;
+    top:2px;
+    left:-13px;
+    z-index: 9999;
+    width: 15px;
+    height: 15px;
+    background: url('./酷狗图片/sprite.png') no-repeat 0 -267px;
+}
+.select .top .r ul{
+    overflow: hidden;
+}
+.select .top .r li{
+    width: 155px;
+    height: 155px;
+    float: left;
+    margin-left: 5px;
+    position: relative;
+    margin-bottom:13px;
+}
+.select .top .r li img{
+    width: 155px;
+    height: 155px;
+}
+.select .top .r .bo{
+    height: 40px;
+    width: 155px;
+    font-size: 14px;
+    position: absolute;
+    color:#ccc;
+    padding-left: 10px;
+    box-sizing: border-box;
+    bottom: 0;
+    background-color: rgba(37, 35, 35, 0.3);
+}
+.select .top .r li::after{
+    content: '';
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    background: url('./酷狗图片/sprite.png') no-repeat 0 -401px;
+    bottom:10px;
+    right:20px;
+    z-index: 333;
+    display: none;
+} 
+.select .top .r li:hover::after{
+    display: block;
+}
+.select .top .r li>span{
+    position:absolute;
+    width: 53px;
+    height: 15px;
+    font-size: 12px;
+    top:5px;
+    right:0;
+    color: #fff;
+    padding-left: 10px;
+}
+.select .top .r li>span::after{
+    content: '';
+    position: absolute;
+    top:2px;
+    left:-13px;
+    z-index: 9999;
+    width: 15px;
+    height: 15px;
+    background: url('./酷狗图片/sprite.png') no-repeat 0 -267px;
+}
+.select .top .ri{
+    float: right;
+    width: 320px;
+}
+.select .top .ri .title{
+    height:100px;
+    line-height: 100px;
+}
+.select .top .ri .title h3{
+    font-weight: 400;
+    color:#666;
+    font-size: 25px;
+    float: left;
+}
+.select .top .ri .title h3 span{
+    color: blue;
+}
+.select .top .ri .title a{
+    float: right;
+    color:#666;
+    line-height: 100px;
+    font-size: 12px;
+    text-decoration: none;
+}
+.select .top .ri .btt li{
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+.select .top .ri .btt li img{
+  width: 98px;
+  height: 98px;
+  float: left;
+}
+.select .top .ri .btt li .cover{
+    width: 98px;
+    height: 98px;
+    position: absolute;
+    top:0;
+    left:0;
+    background-color: rgba(83, 85, 87, 0.3);
+    display: none;
+}
+.select .top .ri .btt li .font{
+    float: left;
+    font-size: 12px;
+    width: 200px;
+    margin-left:10px;
+    margin-top:15px;
+    position: relative;
+}
+.select .top .ri .btt li .font span{
+  position: absolute;
+  width: 7px;
+  height: 14px;
+  background: url('./酷狗图片/sprite.png') 0 -322px;
+  top:23px;
+  right: -3px;
+}
+.select .top .ri .btt li .font p{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    line-height: 20px;
+}
+.select .top .ri .btt li:hover .cover{
+    display: block;
+}
+.select .top .ri .btt li::after{
+    content: '';
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    background: url(./酷狗图片/sprite.png) no-repeat 0 -401px;
+    bottom: 30px;
+    left: 30px;
+    z-index: 333;
+    display: none;
+}
+.select .top .ri .btt li:hover::after{
+    display: block;
+}

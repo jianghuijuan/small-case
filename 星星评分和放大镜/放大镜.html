@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./放大镜.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <div class="small"></div>
+    </div>
+    <div class="box1"></div>
+</body>
+<script src="./jquery.min.js"></script>
+<script>
+ $('.box').mouseenter(function(){
+     $('.small').show();
+     $('.box1').show();
+    $('.box').mousemove(function(e){
+        var left=e.clientX-$('.box').offset().left-100;
+        var top=e.clientY-$('.box').offset().top-100;
+        left=left<0?0:left;
+        top=top<0?0:top;
+        left=left>$('.box').width()-$('.small').width()?$('.box').width()-$('.small').width():left;
+        top=top>$('.box').height()-$('.small').height()?$('.box').height()-$('.small').height():top;
+        $('.small').css({top:top,left:left});
+        var x=left/400 *800;
+        var y=top/400* 800;
+        $('.box1').css({
+            'backgroundPositionX':-x,
+            'backgroundPositionY':-y,
+        })
+    })
+    $('.box').mouseleave(function(){
+        $('.small').hide();
+     $('.box1').hide();
+    })
+ })
+</script>
+</html>
