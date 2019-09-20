@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+    *{
+        margin:0;
+        padding:0;
+        list-style: none;
+    }
+    table td{
+       border: 1px solid black;
+       border-collapse: collapse;
+       padding: 15px;
+       font-size: 25px;
+    }
+    table {
+    border-collapse: collapse;
+    margin:100px auto;
+ 
+}
+h2{
+    font-size: 25px;
+    border:1px solid rgba(43, 43, 156, 0.5);
+    width: 100px;
+    background-color: rgba(43, 43, 156, 0.5);
+    text-align: center;
+    position:absolute;
+    top:150px;
+    left:100px;
+}
+.h2{
+    top:200px;
+}
+    </style>
+</head>
+<body>
+    <table>
+    
+    </table>
+ 
+    <h2 class="h1">开始</h2>
+    <h2 class="h2">结束</h2>
+</body>
+<script src="./jquery.min.js"></script>
+<script>
+ var arr=['王宇龙','张岩','薛丰','赵卓','肖闯','翱翔','杨帅龙','任世旭',
+             '郭金成','周一','高坤','穆朝阳','丁聪','王浩杰','康嘉诚','皇甫全满',
+             '贾文增','阮世凯','刘晨旭','王自文','崔治超','杨伟伟','胡玉坤','李晶晗',
+             '张鹏','丁岩','王慧方','马娜飞','张世豪','岳婉晴','崔钰鹏',
+             '李秋如','凡春波','高原','姜艺杰','姜会娟','彭永福'];
+var e=0;
+var d=Math.ceil((arr.length/6));
+for(var k=0;k<d;k++){
+    $('table').append('<tr></tr>');
+    for(var i=0;i<6;i++){
+    var c="<td>"+arr[e]+"</td>";
+    e++;
+    $('tr').eq(k).append(c);
+    if(arr[e]==undefined){
+        break;
+    }
+}
+}
+var time;
+var flag=true;
+$('.h1').click(function(){
+    if(flag){
+        flag=false;
+        time=setInterval(function(){
+        $('td').css('background','#fff');
+        var ran=Math.floor(Math.random()*arr.length);
+        var d=parseInt(Math.random()*256);
+        var d1=parseInt(Math.random()*256);
+        var d2=parseInt(Math.random()*256);
+        $('td').eq(ran).css('background','rgb('+d+','+d1+','+d2+'.5)');
+    },20)
+    }
+})
+$('.h2').click(function(){
+    flag=true;
+    clearInterval(time);
+})
+
+</script>
+</html>

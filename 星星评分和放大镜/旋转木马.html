@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./旋转木马.css">
+</head>
+<body>
+    <div class="wrap">
+        <div class="slide" id="slide">
+          <ul>
+            <li><img src="./images/6.jpg" alt="" /></li>
+            <li><img src="./images/7.jpg" alt="" /></li>
+            <li><img src="./images/8.jpg" alt="" /></li>
+            <li><img src="./images/4.jpg" alt="" /></li>
+            <li><img src="./images/1.jpg" alt="" /></li>
+          </ul>
+          <div class="arrow">
+            <a href="javascript:;" class="prev"></a>
+            <a href="javascript:;" class="next"></a>
+          </div>
+        </div>
+      </div>
+</body>
+ <script src="./jquery.min.js"></script>
+ <script>
+     var arr = [
+        {
+            width:400,
+            height:330,
+            left:40,
+            top:0,
+            opacity:0,
+            z:2
+        },
+        {
+            width:564,
+            height:330,
+            left:34,
+            top:79,
+            opacity:0.8,
+            z:3
+        },
+        {
+            width:800,
+            height:500,
+            left:200,
+            top:0,
+            opacity:1,
+            z:4
+        },
+        {
+            width:564,
+            height:330,
+            left:605,
+            top:79,
+            opacity:0.8,
+            z:3
+        },
+        {
+            width:400,
+            height:330,
+            left:611,
+            top:0,
+            opacity:0,
+            z:2
+        }
+    ];
+ function item(){
+    for(var i=0;i<arr.length;i++){
+         $('.slide li').eq(i).css('zIndex',arr[i].z).css({
+                width:arr[i].width,
+                height:arr[i].height,
+                top:arr[i].top,
+                left:arr[i].left,
+                opacity:arr[i].opacity,
+         })
+     }
+ }
+    item();
+     $('.next').click(function(){
+        arr.unshift(arr.pop());
+        item();
+     })
+     $('.prev').click(function(){
+        arr.push(arr.shift());
+        item();
+     })
+    //  setInterval(function(){
+    //     $('.next').click();
+    //  },1000)
+
+    //  $(".wrap").hover(function (){
+    //       $('.arrow').fadeIn();
+    // },function (){
+    //     $('.arrow').fadeOut();
+    // })
+
+
+    //  // 1. 获得要操作的对象
+    //  var lis = $(".slide ul li");
+    // var arrow = $(".arrow");
+    // var flag  = true;
+
+    // // 2. 让每个li标签走到指定的位置
+    // assign();
+    // function assign(){
+    //     $.each(pos,function (index,ele){
+    //         // index是索引号  ele是数组中的对象
+    //         lis.eq(index).css("zIndex",ele.z).stop().animate(ele,500,function (){
+    //                flag = true;
+    //         });
+    //     });
+    // }
+
+    // // 3. 鼠标移入大盒子的时候，要显示左右按钮 ,离开大盒子，要隐藏左右按钮
+    // $(".wrap").hover(function (){
+    //        arrow.fadeIn();
+    // },function (){
+    //        arrow.fadeOut();
+    // })
+    // // 4. 给右侧按钮注册事件
+    // $(".next").on("click",function (){
+    //     if(flag){
+    //         flag = false;
+    //         pos.unshift(pos.pop());
+    //         assign();
+    //     }
+
+    // })
+    // // 5. 给左侧按钮注册事件
+    // $(".prev").on("click",function (){
+    //     if(flag){
+    //         flag = false;
+    //         pos.push(pos.shift());
+    //         // 数组现在是重新排列的了，再让li标签根据新的数组，重新生成自己的样式
+    //         assign();
+    //     }
+
+    // })
+ </script>
+</html>

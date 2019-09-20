@@ -67,4 +67,35 @@ $(function(){
     //     $('.lunbo .right_arrow').click();
     // },3000)
     })();
+    //第二个轮播部分；
+    (function(){
+        var index=1;
+        function text(){
+            $('.select .midd .m_left .main1 .page span i').html(index);
+            $('.select .midd .m_left .main1 >ul').eq(index-1).show().siblings('ul').hide();
+        }
+      $('.select .midd .m_left .main1 >ul:first').show();
+      $('.select .midd .m_left .top li').mouseenter(function(){
+           index=$(this).index()+1;
+          if(index>3){
+              index=2;
+          }
+         text();
+      })
+
+      $('.select .midd .m_left .main1 .page span .two').click(function(){
+         index++;
+         if(index>3){
+             index=3;
+         }
+         text();
+      })
+      $('.select .midd .m_left .main1 .page span .one').click(function(){
+         index--;
+         if(index<1){
+             index=1;
+         }
+         text();
+   })
+    })()
 })

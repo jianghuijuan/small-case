@@ -8,6 +8,11 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="box3">
+        <div class="a1"></div>
+        <div class="a2"></div>
+        <div class="a3"></div>
+    </div>
     <div class="box">
         <div class="small"></div>
     </div>
@@ -16,7 +21,7 @@
 <script src="./jquery.min.js"></script>
 <script>
  $('.box').mouseenter(function(){
-     $('.small').show();
+     $('.small').stop(true,true).show();
      $('.box1').show();
     $('.box').mousemove(function(e){
         var left=e.clientX-$('.box').offset().left-100;
@@ -33,10 +38,24 @@
             'backgroundPositionY':-y,
         })
     })
-    $('.box').mouseleave(function(){
+ })
+ $('.box').mouseleave(function(){
+     $('.small').animate({
+         width:'100%',
+         height:'100%',
+         top:0,
+         left:0
+     },400,function(){
         $('.small').hide();
+        $('.small').css({width:200,height:200})
+     })
+    
      $('.box1').hide();
     })
- })
+    $('.box3 >div').mouseenter(function(){
+        $(this).css({'borderColor':'red'}).siblings().css({'borderColor':'transparent'});
+        $('.box').css('backgroundImage',$(this).css('backgroundImage'));
+        $('.box1').css('backgroundImage',$(this).css('backgroundImage'));
+    })
 </script>
 </html>

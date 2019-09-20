@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin:0;
+        padding: 0;
+        list-style: none;
+    }
+    .box{
+        width: 300px;
+        margin: 200px auto;
+    }
+   h1{
+       font-weight: normal;
+       border:1px solid #ccc;
+       height: 40px;
+       width: 200px;
+       text-align: center;
+       line-height: 40px;
+       font-size: 22px;
+   }
+   h1:last-child{
+       font-size: 30px;
+       background: rgba(144,2,3,.5);
+   }
+    </style>
+</head>
+<body>
+   <div class="box">
+     <h1>开始</h1>
+     <h1>结束</h1>
+     <h1>王宇龙</h1>
+   </div>
+</body>
+<script src="./jquery.min.js"></script>
+<script>
+ var arr=['王宇龙','张岩','薛丰','赵卓','肖闯','翱翔','杨帅龙','任世旭',
+             '郭金成','周一','高坤','穆朝阳','丁聪','王浩杰','康嘉诚','皇甫全满',
+             '贾文增','阮世凯','刘晨旭','王自文','崔治超','杨伟伟','胡玉坤','李晶晗',
+             '张鹏','丁岩','王慧方','马娜飞','张世豪','岳婉晴','崔钰鹏',
+             '李秋如','凡春波','高原','姜艺杰','姜会娟','彭永福'];
+var time;
+$('h1').eq(0).click(function(){
+    time=setInterval(function(){
+        var d=parseInt(Math.random()*256);
+        var d1=parseInt(Math.random()*256);
+        var d2=parseInt(Math.random()*256);
+        var c=parseInt( Math.random()*arr.length);
+        $('h1').eq(2).html(arr[c]);
+        $('h1').eq(2).css('background','rgb('+d+','+d1+','+d2+'.5)');
+    },1)
+   
+})
+
+$('h1').eq(1).click(function(){
+    clearInterval(time);
+})
+</script>
+</html>

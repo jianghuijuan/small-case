@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+ var obj={
+     name:'zs',
+     age:3,
+     car:['jjjf','red'],
+     st:{sex:'女'}
+ }
+
+function copy(obj){
+    var obj1=obj instanceof Array?[]:{};
+    for(var key in obj){
+        if(typeof obj[key] == 'object'){
+            obj1[key] = copy(obj[key]);
+        }else{
+            obj1[key]=obj[key];
+        }
+    }
+    return obj1;
+}
+
+console.log(copy(obj));
+//  function copy(obj){
+//      var obj1={};
+//     for(var key in obj){
+//         if(typeof obj[key] == 'object'){
+//             obj1[key] = obj[key] instanceof Array?[]:{};
+//             for(var k in obj[key]) {
+//                 obj1[key][k]=obj[key][k];
+//             }
+//         }else{
+//             obj1[key]=obj[key];
+//         }
+//     }
+//     return obj1;
+//  }
+//   console.log(copy(obj));
+</script>
+</html>

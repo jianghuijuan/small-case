@@ -73,6 +73,7 @@
     background-color:darkblue;
 }
 .top2 {
+    min-width: 1000px;
     height: 55px;
     background-color: rgb(22, 2, 2);
 }
@@ -147,6 +148,7 @@
   height: 500px;
   background: url('./酷狗图片/1.jpg') center;
   opacity: 1;
+  min-width: 1000px;
 }
 .lunbo span{
     position: absolute;
@@ -452,4 +454,232 @@
 }
 .select .top .ri .btt li:hover::after{
     display: block;
+}
+.select .midd{
+    overflow: hidden;
+}
+.select .midd>div{
+ float: left;
+}
+.select .midd .m_left{
+    width: 650px;
+}
+.select .midd .m_left .top{
+  height: 51px;
+  line-height: 51px;
+}
+.select .midd .m_left .top h2{
+    font-weight: 400;
+    font-size: 26px;
+    float: left;
+    color: #666;
+    margin-right: 50px;
+}
+.select .midd .m_left .top h2>span{
+    color: blue;
+}
+.select .midd .m_left .top >ul{
+    float: left;
+    overflow: hidden;
+}
+.select .midd .m_left .top >ul>li{
+    float: left;
+    margin-right:30px;
+    color: #000;
+    font-size: 14px;
+}
+.select .midd .m_left .top >ul>li:hover{
+    color:blue;
+}
+.select .midd .m_left .top >ul .now{
+    color:blue;
+}
+.select .midd .m_left .top >a{
+    float: right;
+    width: 91px;
+    font-size: 14px;
+    height: 31px;
+    line-height: 32px;
+    margin-top:13px;
+    text-decoration: none;
+    color: #666;
+    position: relative;
+    border:1px solid #999;
+    padding-left: 40px;
+}
+.select .midd .m_left .top >a::after{
+  position: absolute;
+  top:9px;
+  left: 21px;
+  content: '';
+  background: url('./酷狗图片/sprite.png') no-repeat;
+  background-position: 0 -303px;
+  width: 12px; 
+  height: 14px
+}
+.select .midd .m_left .main1{
+    color: #333;
+}
+.select .midd .m_left .main1 li{
+    height: 35px;
+    line-height: 35px;
+}
+.select .midd .m_left .main1 >ul{
+    overflow: hidden;
+    display: none;
+}
+.select .midd .m_left .main1 .page{
+    text-align: center;
+    font-size: 14px;
+}
+.select .midd .m_left .main1 .page i{
+  font-style: normal;
+} 
+.select .midd .m_left .main1 .page span{
+    position: relative;
+    padding: 0 20px;
+}
+.select .midd .m_left .main1 .page span .one{
+ position: absolute;
+ width: 6px;
+ height: 9px;
+ top:6px;
+ left: 0;
+ background: url('./酷狗图片/pageChange.jpg') 0 0;
+}
+.select .midd .m_left .main1 .page span .two{
+    position: absolute;
+    width: 6px;
+    height: 9px;
+    top:6px;
+    right: 0;
+    background: url('./酷狗图片/pageChange.jpg') -13px -14px;
+   }
+   .select .midd .m_left .main1>ul li:hover{
+     color:blue;
+   }
+   .select .midd .m_left .main1>ul li span:last-child{
+       float: right;
+   }
+   .select .midd .m_left .main1>ul li span:first-child{
+       position: relative;
+   }
+   .select .midd .m_left .main1>ul li span:first-child::after{
+       content:'';
+       position:absolute;
+       width: 21px;
+       height: 12px;
+       top:5px;
+       right:-20px;
+       background: url('./酷狗图片/first.png') no-repeat;
+   }
+   .select .midd .m_right{
+       float: right;
+       width: 320px;
+   }
+   .select .midd .m_right .top{
+    height: 51px;
+    line-height: 51px;
+  }
+  .select .midd .m_right .top h2{
+      font-weight: 400;
+      font-size: 26px;
+      float: left;
+      color: #666;
+      margin-right: 30px;
+  }
+  .select .midd .m_right .top h2>span{
+      color: blue;
+  }
+  .select .midd .m_right .top a{
+      float: right;
+      color: #999;
+      text-decoration: none;
+      font-size: 14px;
+  }
+  .select .midd .m_right .top a:hover{
+      color: #009af3;
+  }
+  .select .midd .m_right .p_two{
+    width: 320px;
+    height: 175px;
+    position: relative;
+    margin-bottom: 20px;
+  }
+  .select .midd .m_right .p_two img{
+      width: 100%;
+      height: 100%;
+  }
+  .select .midd .m_right .p_two .cover{
+    width: 320px;
+    height: 175px;
+    position: absolute;
+    top:0;
+    left:0;
+    background:rgba(0,0,0,.3);
+    display: none;
+  }
+  .select .midd .m_right .p_two .cover span{
+      position: absolute;
+      top:50%;
+      left:50%;
+      transform: translateX(-50%) translateY(-50%);
+      width: 48px;
+      height: 48px;
+      background: url('./酷狗图片/sprite.png') no-repeat 0 -489px;
+  }
+  .select .midd .m_right .p_two:hover .cover{
+    display: block;
+  }
+  .select .midd .m_right .p_two .font{
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      background-color: rgba(2,3,4,.4);
+      padding: 2px 5px;
+      color:#fff;
+      font-size: 15px;
+      box-sizing: border-box;
+  }
+  .select .midd .m_right .p_two .font span{
+     overflow: hidden;
+     display: block;
+     white-space: nowrap;
+     width: 100%;
+     text-overflow: ellipsis;
+  }
+  .select .midd .m_right .fir {
+     overflow: hidden;
+  }
+  .select .midd .m_right .fir .on{
+      width: 154px;
+      float: left;
+      height: 84px;
+      position: relative;
+  }
+  .select .midd .m_right .fir img{
+      width: 100%;
+      height: 100%;
+  }
+  .select .midd .m_right .fir .sec{
+    width: 154px;
+    float: right;
+    height: 84px;
+    position: relative;
+  }
+  .select .midd .m_right .fir span{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 48px;
+    display: none;
+    height: 48px;
+    background: url('./酷狗图片/sprite.png') no-repeat 0 -489px;
+}
+.select .midd .m_right .fir>div:hover span{
+  display: block;
+}
+.pic_2{
+    margin:20px 0;
 }
