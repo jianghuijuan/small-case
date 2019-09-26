@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <select></select>
+    <select></select>
+    <select></select>
+    <select></select>
+</body>
+<script src="./jquery.min.js"></script>
+<script src="./area.js"></script>
+<script>
+
+
+    //省
+    var province;
+    for (var key in place) {
+        province += '<option value="' + key + '">' + key + '</option>';
+        $('select').eq(0).html(province);
+    }
+    var index = "河南省";
+    var cityIndex='郑州市';
+    var quIndex=0;
+    var jieIndex='林山寨街道办事处';
+    $('select').eq(0).change(function () {
+        index = $(this).val();
+        city(index);
+        qu(index,cityIndex);
+        jie(index,cityIndex,quIndex);
+    })
+
+    //市
+    city(index);
+    $('select').eq(1).change(function () {
+        cityIndex = $(this).val();
+        qu(index,cityIndex);
+        jie(index,cityIndex,quIndex);
+    })
+  
+    //区
+    qu(index,cityIndex);
+    $('select').eq(2).change(function () {
+        quIndex = $(this).val();
+        jie(index,cityIndex,quIndex);
+    })
+  
+    //街道
+    jie(index,cityIndex,quIndex);
+   $('.select').eq(3).change(function(){
+     jieIndex=$(this).val();
+   })
+  function jie(index,cityIndex,quIndex){
+      var jie='';
+    $.each(place[index][0][cityIndex][quIndex],function(k,elem){
+        var d=elem.split("、");
+        $.each(d,function(ii,ee){
+            jie += '<option value="' + ee + '">' + ee + '</option>';
+        })
+        $('select').eq(3).html(jie);
+    })
+  }
+
+
+    function qu(index,cityIndex){
+        var qu;
+       $.each(place[index][0][cityIndex],function(i,e){
+        $.each(e,function(inde,ele){
+          qu += '<option value="' + i + '">' + inde + '</option>';
+          $('select').eq(2).html(qu);
+        })
+    })
+    $('select').eq(2).change();
+    }
+   
+
+    
+    function city(index) {
+        var city;
+        $.each(place[index][0], function (i, e) {
+            city += '<option value="' + i + '">' + i + '</option>';
+            $('select').eq(1).html(city);
+        })
+        $('select').eq(1).change();
+    }
+</script>
+
+</html>

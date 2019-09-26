@@ -3,40 +3,20 @@
     padding: 0;
     list-style: none;
 }
-
-ol, ul {
-    list-style: none
-  }
-  
   a {
     text-decoration: none
   }
-  
-  fieldset, img {
-    border: 0;
-    vertical-align: top;
-  }
-  
-  a, input, button, select, textarea {
-    outline: none;
-  }
-  
-  a, button {
-    cursor: pointer;
-  }
-  
+
   .wrap {
     width: 1200px;
     margin-left: auto;
     margin-right: auto;
     border: 1px solid red;
   }
-  
   .slide {
     position: relative;
     height: 500px;
   }
-  
   .slide ul {
     position: absolute;
     left: 0;

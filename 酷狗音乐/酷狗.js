@@ -97,5 +97,22 @@ $(function(){
          }
          text();
    })
-    })()
+    })();
+
+    //第三个轮播部分；
+   (function(){
+    var index=0;
+    $('.select .hot_tel .m_right .top ul li').mouseenter(function(){
+        index=$(this).index();
+        $(this).addClass('color').siblings().removeClass('color');
+        $('.select .hot_tel .m_right .ma').eq(index).show().siblings().hide();
+        $('.select .hot_tel .m_right .squ span').eq(index).addClass('bgc').siblings().removeClass('bgc');
+    })
+    $('.select .hot_tel .m_right .squ span').mouseenter(function(){
+        index=$(this).index();
+        $('.select .hot_tel .m_right .top ul li').addClass('color').siblings().removeClass('color');
+        $('.select .hot_tel .m_right .ma').eq(index).show().siblings().hide();
+        $(this).addClass('bgc').siblings().removeClass('bgc');
+    })
+   })();
 })

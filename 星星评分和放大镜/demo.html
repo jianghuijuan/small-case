@@ -24,8 +24,17 @@
 </body>
 <script src="./jquery.min.js"></script>
 <script>
-$('button').click(function(){
-    $('.bo').css('width',100);
+// $('button').click(function(){
+//     $('.bo').css('width',100);
+// })
+var arr=[3,5,6,8,9,0];
+console.log($(arr));
+var obj={
+    name:'zse',
+    age:22
+}
+$.each(obj,function(i,e){
+  console.log(e); 
 })
 </script>
 </html>

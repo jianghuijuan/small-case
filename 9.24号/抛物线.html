@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin:0;
+        padding: 0;
+    }
+    div{
+        width: 50px;
+        height: 50px;
+        background-color:red;
+        position: absolute;
+        top:300px;
+        left:300px;
+    }
+    </style>
+</head>
+<body>
+    <button>点击</button>
+    <div></div>
+</body>
+
+<script src="./jquery.min.js"></script>
+<script type="text/javascript" src="http://gsgd.co.uk/sandbox/jquery/easing/jquery.easing.1.3.js"></script>
+<script>
+//  $('button').click(function(){
+//     $('div').animate({top:0,left:600},400, { 
+// specialEasing: { 
+// left: 'swing', 
+// top: 'easeOutBounce'
+// } })
+//  })
+
+$('button').click(function(){
+    $('div').animate({ 
+left: 600, 
+top: 0 
+}, { 
+specialEasing: { 
+top: 'swing', left: 'linear'
+} 
+}).animate({
+    left: 700, 
+    top: 300 
+},{ 
+specialEasing: { 
+left: 'swing', top: 'linear'
+} 
+},function(){
+    $('div').hide();
+    $('div').css({
+        top:600,
+        left:300
+    })
+});
+})
+</script>
+</html>

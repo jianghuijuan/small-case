@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <select>
+        <option value="ee">22</option>
+        <option value="33">33</option>
+        <option value="77">3w3</option>
+    </select>
+  
+                                        
+</body>
+<script src="./jquery.min.js"></script>
+<script>
+    $('option').eq(1).prop('selected',true);
+    $('select').change(function(){
+        console.log($(this).val());
+        console.log(this.value);
+    })
+//     var a=prompt('请输入一个数字a'),b=prompt('输入数字b');
+// if(a>0){
+//     a=a-0;
+// }else{
+//     a=-a;
+// }
+// if(b>20){
+//     a=-a;
+// }
+// // a = b>20?(a>0?a-0:-a):a;
+// a = b>20?-a:(a>0?a-0:-a);
+// console.log(a);
+</script>
+</html>

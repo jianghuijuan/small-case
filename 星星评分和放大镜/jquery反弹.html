@@ -25,40 +25,40 @@
             width: size,
             height: size,
             borderRadius: "50%",
-            boxShadow: `0 0 20px 1px ${color}`,
+            boxShadow: `0 0 20px 10px ${color}`,
             position: "absolute",
             left: left,
             top: top
         })
-
-        var arr = [-5,5];
-        var i = Math.floor(Math.random() * arr.length);
-        var k = Math.floor(Math.random() * arr.length);
-        var a = arr[i], b = arr[k];
-        var ol = odiv.offsetLeft, ot = odiv.offsetTop;
-        function item(odiv) {
-            ol += a;
-            ot += b;
-            if (ot >= $(window).height() - 100) {
-                b = -5;   
-            }
-            if (ol >= $(window).width() - 100) {
-                a = -5;
-            }
-            if (ol <= 0) {
-                a = 5;
-            }
-            if (ot <= 0) {
-                b = 5;
-            }
-            // console.log(ol, ot)
-            $(odiv).animate({ left: ol, top: ot }, 100, function () {
-                item(this)
-            })
-        }
-        item(odiv)
-
     })
+    //     var arr = [-5,5];
+    //     var i = Math.floor(Math.random() * arr.length);
+    //     var k = Math.floor(Math.random() * arr.length);
+    //     var a = arr[i], b = arr[k];
+    //     var ol = odiv.offsetLeft, ot = odiv.offsetTop;
+    //     function item(odiv) {
+    //         ol += a;
+    //         ot += b;
+    //         if (ot >= $(window).height() - 100) {
+    //             b = -5;   
+    //         }
+    //         if (ol >= $(window).width() - 100) {
+    //             a = -5;
+    //         }
+    //         if (ol <= 0) {
+    //             a = 5;
+    //         }
+    //         if (ot <= 0) {
+    //             b = 5;
+    //         }
+    //         // console.log(ol, ot)
+    //         $(odiv).animate({ left: ol, top: ot }, 100, function () {
+    //             item(this)
+    //         })
+    //     }
+    //     item(odiv)
+
+    // })
 
 </script>
 
