@@ -6,7 +6,7 @@
 .box{
     width: 1226px;
     height: 460px;
-    margin: 100px 0;
+    margin: 100px auto;
     position:relative;
 }
 
@@ -40,4 +40,12 @@
 .po li{
     height: calc(460px / 6);
     line-height: 18px;
+}
+.small{
+    width: 1000px;
+    height:460px;  
+    position: absolute;
+    top:0;
+    right:0;
+    background: url('./img/dfda6a77b8e9d4a799ac101d9d9e78b3.webp') 100% 100%;
 }

@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="box">
-      
+      <div class="small"></div>
     </div>
 </body>
 <script src="./jquery-1.12.1.js"></script>
@@ -25,22 +25,17 @@ for(var i=0;i<10;i++){
 var index=0;
 $('a').mouseenter(function(){
     index=$(this).attr('class');
-    // console.log(index)
     $('.box div').hide();
     var sli= $(this).siblings('div');
     sli.show();
     var length=data['li'+(+index+1)].length;
-    // console.log(length);
     var str='';
    
     var k1=0;
     ul=Math.ceil(length/6);
-    // console.log(ul);
     for(let i=0;i<ul;i++){
        var str2='';
        for(let i=0;i<6;i++){
-        console.log(data['li'+(+index+1)][k1])
-        //   console.log(k1);
            if(!data['li'+(+index+1)][(k1)]){
                break;
            }
