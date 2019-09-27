@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .banner {
+            width: 1226px;
+            height: 460px;
+            margin: 100px auto;
+            background-image: url(./img/1.webp);
+            background-size: 100%;
+        }
+
+        .ba-list {
+            width: 234px;
+            height: 460px;
+            padding: 20px 0;
+            background: rgba(105, 101, 101, .6);
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .ba-ul {
+            width: 100%;
+            list-style: none;
+            color: #fff;
+        }
+
+        .ba-ul>li {
+            padding-left: 30px;
+            padding-right: 30px;
+            height: 42px;
+            line-height: 42px;
+            font-size: 14px;
+        }
+
+        .ba-ul>li:hover {
+            background-color: #ff6700;
+            cursor: pointer;
+        }
+
+        .ba-ul>li>span {
+            float: right;
+            font-size: 20px;
+        }
+
+        .list-box {
+            width: calc(1226px - 234px);
+            height: 460px;
+            display: none;
+            position: absolute;
+            left: 234px;
+            top: 0;
+            background-color: #fff;
+            border: 1px solid #000;
+            box-sizing: border-box;
+        }
+
+        .list-box>ul {
+            float: left;
+            width: calc((1226px - 234px - 2px)/4);
+        }
+
+        .list-box li {
+            list-style: none;
+            padding: 18px 20px;
+            line-height: 40px;
+            color: #333333;
+            cursor: pointer;
+            font-size: 14px;
+
+        }
+
+        .list-box li>img {
+            margin: 0 12px 0 0;
+            vertical-align: middle;
+            width: 40px;
+            height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script src="./jquery-1.12.1.js"></script>
+    <script>
+        $('<div class="banner"></div>').appendTo('body');
+        $('<div class="ba-list"></div>').appendTo('.banner');
+        $('<ul class="ba-ul"></ul>').appendTo('.ba-list');
+
+        for (var i = 0; i < 10; i++) {
+            $('<li class="list' + i + '">手机 电话卡 <span>&gt;</span></li>').appendTo('.ba-ul');
+            $('<div class="list-box"></div>').appendTo('.list' + i + '');
+        }
+
+        $('.ba-ul >li').hover(function () {
+            $(this).children('.list-box').show();
+        }, function () {
+            $(this).children('.list-box').hide();
+        })
+        $('.list-box').hover(function () {
+            $(this).show();
+        }, function () {
+            $(this).hide();
+        })
+        /* 第一个 */
+        var arr1 = ['img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp'];
+        // console.log(arr.length)
+        /* 第二个 */
+        var arr2 = ['img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp'];
+
+        var arr3 = ['img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp'];
+        var arr4 = ['img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp'];
+
+        var arr5 = ['img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp'];
+
+        var arr6 = ['img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp']; var arr5 = ['img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp'];
+
+        var arr7 = ['img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp'];
+
+        var arr8 = ['img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp'];
+
+        var arr9 = ['img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp'];
+
+        var arr10 = ['img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp', 'img/2.webp'];
+        list(arr1, 0);
+        list(arr2, 1);
+        list(arr3, 2);
+        list(arr4, 3);
+        list(arr5, 4);
+        list(arr6, 5);
+        list(arr7, 6);
+        list(arr8, 7);
+        list(arr9, 8);
+        list(arr10, 9);
+
+
+        function list(arr, a) {
+            var col = Math.ceil(arr.length / 6);
+            var num = 0;
+            for (var j = 0; j < col; j++) {
+                $('<ul></ul>').appendTo('.list' + a + ' >.list-box');
+            }
+            for (var k = 0; k < arr.length; k++) {
+                if (k % 6 == 0) {
+                    num++;
+                }
+                $('<li><img src="' + arr[k] + '"/>小米MIX Alpha</li>').appendTo('.list' + a + ' >.list-box >ul:eq(' + (num - 1) + ')');
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
