@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+     *{
+         margin:0;
+         padding:0;
+         list-style: none;
+     }
+     .box{
+       width: 600px;
+       height: 600px;
+     }
+     img{
+         width: 200px;
+         height: 200px;
+         float: left;
+     }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img id="img1" src="./images/11.jpg" alt="">
+        <img id="img2" src="./images/12.jpg" alt="">
+        <img id="img3" src="./images/13.jpg" alt="">
+        <img id="img4" src="./images/14.jpg" alt="">
+        <img id="img5" src="./images/15.jpg" alt="">
+        <img id="img6" src="./images/17.jpg" alt="">
+        <img id="img7" src="./images/18.jpg" alt="">
+        <img id="img8" src="./images/30.jpg" alt="">
+        <img id="img9" src="./images/`16.jpg" alt="">
+    </div>
+</body>
+<script>
+   var image = document.images;
+    // [img,img,img]
+    for(var i = 0; i < image.length;i++){
+
+        image[i].index = i;
+        // 设置img标签可以被拖拽
+        image[i].draggable = true;
+
+        image[i].ondragstart = function(e){
+            // 数据交换器   是拖拽事件中 event提供的, 用来储存和获取数据
+            // .setData() 保存数据
+            e.dataTransfer.setData('dataImg',e.target.id)
+        }
+
+        image[i].ondragover = function(e){
+            e.preventDefault();
+        }
+
+        image[i].ondrop = function(e){
+            e.preventDefault();
+            e.stopPropagation();
+            // 当被拖动元素在另一个元素之上时,获取的是另一个元素
+            console.log(e.target);
+
+           var id = e.dataTransfer.getData('dataImg');
+           var img = document.getElementById(id);
+           console.log(id);
+            //  把一个元素插入到另一个元素之前  (被插入元素,被插队的元素)
+           e.target.parentElement.insertBefore(img,e.target);
+        }
+
+    }
+</script>
+</html>

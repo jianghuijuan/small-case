@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 14px;
+}
+.box{
+    width: 272px;
+}
+.all{
+    padding: 0 20px;
+    height: 28px;
+    line-height: 28px;
+    color: #999;
+    background-color:#e6e6e6;
+   
+}
+.title{
+    line-height: 28px;
+    padding: 0 20px;
+    border-bottom: 1px solid #e6e6e6;
+}
+.all span{
+    float: right;
+}
+.box  .price{
+    float: right;
+}
+.one{
+    color: #999;
+    padding:0 20px;
+    overflow: hidden;
+    height: 60px;
+}
+.one input{
+    float: left;
+    margin-top: 20px;
+}
+.one img{
+    width: 50px;
+    height: 50px;
+    float: left;
+    vertical-align: center;
+    margin-top: 5px;
+}
+.one >div{
+    float: left;
+    margin-top: 10px;
+}
+.one >span {
+    float: left;
+    margin-top: 20px;
+}
+.one .jian{
+    margin-left: 47px;
+}

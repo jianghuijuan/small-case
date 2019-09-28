@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./小米作业2.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+      <div class="small"></div>
+    </div>
+</body>
+<script src="./jquery-1.12.1.js"></script>
+<script src="./json1.js"></script>
+<script>
+ //第一条数据
+//  console.log(data['li1'][0]['des']);
+//  console.log(data['li1'][0]['url']);
+$('.box').append('<ul></ul');
+for(var i=0;i<10;i++){
+ $('ul').append('<li class="item"><a class="'+i+'">手机电话卡'+(i+1)+'<span>></span></a><div class="po"></div></li>');
+}
+var index=0;
+$('a').mouseenter(function(){
+    index=$(this).attr('class');
+    $('.box div').hide();
+    var sli= $(this).siblings('div');
+    sli.show();
+    var length=data['li'+(+index+1)].length;
+    var str='';
+   
+    var k1=0;
+    ul=Math.ceil(length/6);
+    for(let i=0;i<ul;i++){
+       var str2='';
+       for(let i=0;i<6;i++){
+           if(!data['li'+(+index+1)][(k1)]){
+               break;
+           }
+           str2 +="<li><img src="+data['li'+(+index+1)][(k1)]['url']+"><p>"+data['li'+(+index+1)][k1]['des']+"</p></li>"
+            k1++;
+       }
+       str += '<ul>'+str2+'</ul>';
+    }
+    sli.html(str);
+}) 
+
+
+</script>
+</html>
