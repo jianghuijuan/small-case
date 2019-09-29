@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./animate.css">
+    <style>
+    *{
+        margin:0;
+        padding:0;
+    }
+    div{
+        font-size: 200px;
+        width: 300px;
+        text-align: center;
+        height: 300px;
+        margin:100px auto;
+        border: 1px solid #ccc;
+    }
+    </style>
+</head>
+<body>
+   <div class="box animated heartBeat">
+   </div>
+</body>
+<script src="./jquery-1.12.1.js"></script>
+<script>
+ var box=document.querySelector('.box');
+
+ var random=parseInt((Math.random()*26)+65);
+ console.log(random);
+ window.onkeydown=function(e){
+   box.className='box';
+ }
+ window.onkeyup=function(e){
+     console.log(box.innerHTML);
+     if(box.innerHTML==e.key.toLocaleUpperCase()){
+        box.className='box animated heartBeat';                                                                                                                                                                               
+     }else{
+        box.className='box animated shake';
+        item(e.keyCode);      
+     }
+     
+    
+ }
+ item(random);                                                                                          
+ function item(e){
+    var ran1=parseInt(Math.random()*256);
+    var ran2=parseInt(Math.random()*256);
+    var ran3=parseInt(Math.random()*256);
+    box.style.color="rgba("+ran1+","+ran2+","+ran3+")";
+     var c=String.fromCharCode(e);
+     box.innerHTML=c;
+ }
+</script>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin:0;
+        padding:0;
+        list-style: none;
+    }
+    .lunbo{
+        background-color: red;
+        width: 1000px;
+        height: 1000px;
+        margin:100px auto;
+        background-image: url('./images/11.jpg');
+        background-size: 100% 100%;
+    }
+    img{
+        width: 100%;
+        height: 100%;
+    }
+    </style>
+</head>
+<body>
+     <div class="lunbo">
+     </div>
+</body>
+<script src="./jquery-1.12.1.js"></script>
+  <script>
+   var arr=['./images/11.jpg','./images/12.jpg','./images/13.jpg','./images/14.jpg'];
+   var index=0;
+  setInterval(function(){
+      $('div').css('opacity',0);
+    index++;
+    if(index==arr.length){
+        index=0;
+    }
+    $('div').css('backgroundImage','url('+arr[index]+')');
+    $('div').animate({
+        opacity:1
+    })
+  },1000)
+
+
+  window.onkeydown=function(e){
+      console.log(e.keyCode);
+  }
+  </script>
+</html>
