@@ -23,6 +23,7 @@
     </style>
 </head>
 <body>
+    <div class="data-lis" data-l="555">222</div>
     <div class="box">
         <img id="img1" src="./images/11.jpg" alt="">
         <img id="img2" src="./images/12.jpg" alt="">
@@ -33,40 +34,28 @@
         <img id="img7" src="./images/18.jpg" alt="">
         <img id="img8" src="./images/30.jpg" alt="">
         <img id="img9" src="./images/`16.jpg" alt="">
-    </div>
+    </div>                                                                   
 </body>
 <script>
-   var image = document.images;
-    // [img,img,img]
-    for(var i = 0; i < image.length;i++){
+   var c=document.querySelector('.data-lis');
+   console.log(c.dataset.l);   
+   
+   var imgs=document.querySelectorAll('img');
+   for(var i=0;i<imgs.length;i++){
+       imgs[i].ondragstart=function(e){
+          e.dataTransfer.setData('dataImg',e.target.id);
+       }
+       imgs[i].ondragover=function(e){
+           e.preventDefault();
 
-        image[i].index = i;
-        // 设置img标签可以被拖拽
-        image[i].draggable = true;
-
-        image[i].ondragstart = function(e){
-            // 数据交换器   是拖拽事件中 event提供的, 用来储存和获取数据
-            // .setData() 保存数据
-            e.dataTransfer.setData('dataImg',e.target.id)
-        }
-
-        image[i].ondragover = function(e){
-            e.preventDefault();
-        }
-
-        image[i].ondrop = function(e){
-            e.preventDefault();
-            e.stopPropagation();
-            // 当被拖动元素在另一个元素之上时,获取的是另一个元素
-            console.log(e.target);
-
-           var id = e.dataTransfer.getData('dataImg');
-           var img = document.getElementById(id);
-           console.log(id);
-            //  把一个元素插入到另一个元素之前  (被插入元素,被插队的元素)
-           e.target.parentElement.insertBefore(img,e.target);
-        }
-
-    }
+       }
+       imgs[i].ondrop=function(e){
+           e.preventDefault();
+           var id=e.dataTransfer.getData('dataImg');
+           var ig=document.getElementById(id);
+           e.target.parentNode.insertBefore(ig,e.target);
+       }
+   }
+  
 </script>
 </html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+     div{
+         width: 200px;
+         height: 50px;
+         margin-right: 10px;
+         float: left;
+         line-height: 50px;
+         padding-left: 10px;
+         box-sizing: border-box;
+         border: 1px solid #ccc;
+     }
+    
+    </style>
+</head>
+<body>
+    <div class="one">
+        <span class="bei" draggable="true">被拖拽的文字!</span>
+    </div>
+    <div class="two">
+        <span class="second" draggable="true"></span>
+    </div>
+</body>
+<script>
+ var one=document.querySelector('.one');
+ var bei=document.querySelector('.bei');
+ var second=document.querySelector('.second');
+ var two=document.querySelector('.two');
+ var span=document.querySelectorAll('span');
+ var div=document.querySelectorAll('div');
+ for(let i=0;i<span.length;i++){
+     div[i].ondragstart=function(e){
+         e.dataTransfer.setData('text',this.innerHTML);
+        
+     }
+     div[i].ondragover=function(e){
+         e.preventDefault();
+     }
+     div[i].ondrop=function(e){
+        div[0].innerHTML='';
+        div[1].innerHTML='';
+         e.preventDefault();
+         var data=e.dataTransfer.getData('text');
+         this.innerHTML=data;
+     }
+ }
+</script>
+</html>
