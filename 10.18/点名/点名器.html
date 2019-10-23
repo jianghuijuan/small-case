@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin:0;
+        padding: 0;
+    }
+    table{
+        margin: 0 auto;
+    }
+
+    td{
+        border:1px solid #ccc;
+        padding: 40px;
+
+    }
+    .begin{
+        margin:0 auto;
+        margin-bottom: 20px;
+        width: 150px;
+        line-height: 50px;
+        border:1px solid rgb(87, 41, 41);
+        background-color: rgb(114, 51, 51);
+        text-align: center;
+        margin-top: 20px;
+        color: #fff;
+    }
+    .active{
+        background-color: rgb(37, 6, 6);
+    }
+   
+    </style>
+</head>
+<body>
+        <div class="begin">开始</div> 
+</body>
+<script src="./jquery-1.12.1.js"></script>
+<script>
+ var arr=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+ $('body').append("<table></table>");
+ var d=7;
+ var leng=Math.ceil(arr.length/7);
+ var h=0;
+ for(var i=0;i<leng;i++){
+     $('table').append('<tr></tr');
+      for(var k=0;k<7;k++){
+          $('tr').eq(i).append('<td>'+arr[h]+'</td>')
+          h++;
+          if(h==arr.length){
+              break;
+          }
+      }
+ }
+
+ 
+//  $('body').append('<div class="begin">开始</div>');
+
+ $('body').on('click','.begin',function(){
+    if($(this).hasClass('active')){
+         clearInterval(time);
+         $(this).toggleClass('active');
+         var c=$(this).hasClass('active')?'停止':'开始';
+        $(this).html(c);
+         return;
+     }
+  
+
+    $(this).toggleClass('active');
+   var c=$(this).hasClass('active')?'停止':'开始';
+      $(this).html(c);
+      
+  
+     
+     time= setInterval(function(){
+        var random1=Math.floor(Math.random()*256);
+        var random2=Math.floor(Math.random()*256);
+        var random3=Math.floor(Math.random()*256);
+        var random=Math.floor(Math.random()*arr.length);
+       $('td').css('backgroundColor','');
+       $('td').eq(random).css('backgroundColor','rgb('+random1+','+random2+','+random3+')');
+      },50)
+     
+ })
+</script>
+</html>

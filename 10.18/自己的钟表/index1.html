@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin:0;
+        padding: 0;
+        list-style: none;
+    }
+    .box{
+        width: 200px;
+        height: 200px;
+        border:1px solid red;
+        margin:100px auto;
+        transform-origin: center;
+        position: relative;
+    }
+    span{
+        transform-origin: center;
+        width: 20px;
+        height: 20px;
+        position:absolute;
+        top:50%;
+        margin-top: -10px;
+        left:50%;
+        margin-left: -10px;
+        border:1px solid #666;
+    }
+    </style>
+</head>
+<body>
+   <div class="box"></div> 
+</body>
+<script src="./jquery-1.12.1.js"></script>
+<script>
+ for(var i=0;i<60;i++){
+     $('.box').append('<span>'+i+'</span>');
+     var deg=i*-6+'deg';
+     $('span').eq(i).css('transform','rotate('+deg+') translateX(200px)')
+ }
+</script>
+</html>

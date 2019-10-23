@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script src="./jquery-1.12.1.js"></script>
+<script>
+    var scre = "<script src='http://172.16.32.107/json.php?callback=showData'><\/script>";
+        $("body").append(scre);
+        function showData (res) {
+              console.log(res);
+        }
+</script>
+</html>

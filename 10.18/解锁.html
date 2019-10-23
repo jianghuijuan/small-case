@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>jQuery+CSS3实现滑动解锁效果</title>
+    <meta content="用jQuery+CSS3实现滑动解锁效果" name="description">
+    <meta content="滑动解锁,jQuery滑动解锁,CSS3滑动解锁" name="keywords">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <style>
+        html {
+            height: 100%;
+            background: #fff;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        html, body {
+            font-family: sans-serif;
+        }
+
+        body {
+            min-height: 100%;
+            width: 100%;
+            overflow: visible;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+            margin: 0;
+            padding: 0;
+        }
+
+        article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+            display: block;
+        }
+
+        audio, canvas, video {
+            display: inline-block;
+        }
+
+        input, select, textarea {
+            font-size: 100%;
+        }
+
+        div {
+            margin: 0 auto;
+        }
+
+        img {
+            border: 0;
+            vertical-align: middle;
+        }
+
+        a {
+            text-decoration: none;
+            color: #303030;
+            cursor: pointer;
+        }
+
+            a:active {
+                text-decoration: none;
+            }
+
+        :focus {
+            outline: none;
+        }
+
+        ::-moz-focus-inner {
+            border: 0;
+        }
+
+        input[type="button"], input[type="submit"], input[type="reset"], input[type="disabled"] {
+            -webkit-appearance: none;
+        }
+
+        input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none !important;
+        }
+
+        input, select, textarea {
+            font-size: 100%;
+        }
+
+        input {
+            border-radius: 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        ol, ul {
+            list-style: none;
+        }
+
+        body {
+            background-color: #fff;
+            font-family: "Hiragino Sans GB W3","\5FAE\8F6F\96C5\9ED1","\5b8b\4f53";
+        }
+
+            body div {
+                box-sizing: border-box;
+                vertical-align: top;
+            }
+
+        .c_r {
+            color: #f61e37;
+        }
+
+        .c_o {
+            color: #e77605;
+        }
+
+        .c_b {
+            color: #3d32ab;
+        }
+
+        .c_y {
+            color: #ffec3e;
+        }
+
+        .c_y_dark {
+            color: #d09e40;
+        }
+
+        .c_w {
+            color: #FFF;
+        }
+
+        .c_b_lighter {
+            color: #8a82d9;
+        }
+
+        .c_b_flash {
+            color: #04cde9;
+        }
+
+        .c_g_dark {
+            color: #434343;
+        }
+
+        .c_g_lighter {
+            color: #7d7d7d;
+        }
+
+        .bdc_b {
+            border-color: #3d32ab;
+        }
+
+        .bdc_b_lighter {
+            border-color: #aea8e7;
+        }
+
+        .bd_n {
+            border: none;
+        }
+
+        .bd_r {
+            border-radius: 3px;
+        }
+
+        .bgc_w {
+            background-color: #FFF;
+        }
+
+        .bgc_w_dark {
+            background-color: #fbfbfb;
+        }
+
+        .bgc_y {
+            background-color: #ffec3e;
+        }
+
+        .bgc_o {
+            background-color: #fdac25;
+        }
+
+        .bgc_b {
+            background-color: #3d32ab;
+        }
+
+        .bgc_g {
+            background-color: #eaeaea;
+        }
+
+        .tc {
+            text-align: center;
+        }
+
+        .b {
+            font-weight: 700;
+        }
+
+        .u {
+            text-decoration: underline;
+        }
+
+        .lt {
+            text-decoration: line-through;
+        }
+
+        .e {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .fl {
+            float: left;
+        }
+
+        .fr {
+            float: right;
+        }
+
+        .clearfix:before, .clearfix:after {
+            content: " ";
+            display: table;
+        }
+
+        .clearfix:after {
+            clear: both;
+        }
+
+        .none {
+            display: none !important;
+        }
+
+        @media only screen and (min-width:640px) {
+            html {
+                font-size: 64px;
+            }
+
+            body {
+                width: 640px;
+                margin: 0 auto;
+            }
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        .pageview {
+            top: 0;
+            left: 0;
+            width: 100%;
+            min-width: 320px;
+            height: 100%;
+            color: #7d7d7d;
+            font-size: .469rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        .main {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .btn {
+            background-color: #7d7d7d;
+            border: 1px solid #7d7d7d;
+            color: #fff !important;
+            cursor: pointer;
+            display: inline-block;
+            font-size: .34375rem;
+            height: .78125rem;
+            line-height: .78125rem !important;
+            padding: 0 .78125rem;
+            text-align: center;
+            text-decoration: none !important;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+            .btn:hover, .btn:focus {
+                background-color: #606c76;
+                border-color: #606c76;
+                color: #fff !important;
+                outline: 0;
+            }
+
+            .btn.btn-disabled, .btn[disabled] {
+                opacity: .5;
+                cursor: default;
+            }
+
+                .btn.btn-disabled:hover, .btn[disabled]:hover, .btn.btn-disabled:focus, .btn[disabled]:focus {
+                    background-color: #7d7d7d;
+                    border-color: #7d7d7d;
+                }
+
+            .btn.btn-outline {
+                color: #7d7d7d !important;
+                background-color: transparent;
+            }
+
+                .btn.btn-outline:hover, .btn.btn-outline:focus {
+                    color: #fff !important;
+                    background-color: #7d7d7d;
+                    border-color: #7d7d7d;
+                }
+
+                .btn.btn-outline.btn-disabled, .btn.btn-outline[disabled] {
+                    color: #606c76 !important;
+                    border-color: inherit;
+                    background-color: transparent;
+                }
+
+                    .btn.btn-outline.btn-disabled:hover, .btn.btn-outline[disabled]:hover, .btn.btn-outline.btn-disabled:focus, .btn.btn-outline[disabled]:focus {
+                        color: #606c76 !important;
+                        border-color: inherit;
+                        background-color: transparent;
+                    }
+
+            .btn.btn-clear {
+                color: #7d7d7d !important;
+                background-color: transparent;
+                border-color: transparent;
+            }
+
+                .btn.btn-clear:hover, .btn.btn-clear:focus {
+                    color: #606c76 !important;
+                    background-color: transparent;
+                    border-color: transparent;
+                }
+
+                .btn.btn-clear.btn-disabled:hover, .btn.btn-clear[disabled]:hover, .btn.btn-clear.btn-disabled:focus, .btn.btn-clear[disabled]:focus {
+                    color: #7d7d7d !important;
+                }
+    </style>
+    <style>
+        .index {
+            background:  #52a9d7;
+            background-size: 1px auto;
+            position: relative;
+        }
+
+            .index .slide_btn {
+                background:  no-repeat;
+                background-size: 100%;
+                width: 4.734rem;
+                height: 1.297rem;
+                position: absolute;
+                z-index: 11;
+                bottom: 5.547rem;
+                left: 2.719rem;
+                font-size: 0.547rem;
+                color: #874000;
+                padding-left: 0.625rem;
+                padding-top: 0.094rem;
+            }
+
+                .index .slide_btn .arr.on {
+                    color: #fff;
+                }
+
+                .index .slide_btn .slider {
+                    position: absolute;
+                    top: 0.031rem;
+                    right: 3.438rem;
+                    width: 1.016rem;
+                    height: 1.016rem;
+                    line-height: 1.016rem;
+                    border-radius: 0.156rem;
+                    background: rgba(0, 0, 0, 0.5);
+                    color: #fff;
+                    text-align: center;
+                    font-weight: 700;
+                }
+    </style>
+    <link href="./animate.min.css" rel="stylesheet">
+
+</head>
+<body class="bgc_w">
+    <article class="pageview">
+        <section class="main index">
+            <h1 style="display: none;">用jQuery+CSS3实现滑动解锁效果</h1>  
+            <div class="slide_btn" id="slide_btn">
+                <b>滑</b><b>我</b><b>解</b><b>锁</b><b class="arr on">></b><b class="arr">></b><b class="arr">></b>
+                <div class="slider">></div>
+            </div>
+        </section>
+        <footer id="footer" style="text-align:center;font-size:12px;position: absolute;bottom: 0;width: 100%;padding: 20px 0;">
+            <div class="outer">
+                <div id="footer-info">
+                    <div class="footer-left">
+                        <a target="_blank" href="http://www.iampua.com/pui/">返回 PUI 首页</a> | <a target="_blank" href="http://www.iampua.com/">泡学达人</a> | <a target="_blank" href="mailto:kbl_1794@qq.com">联系我们</a>
+                        <br>
+                        <br>
+                        Copyright © 2015-<span id="year_today">2017</span> iampua.com | <a href="http://www.miibeian.gov.cn/" target="_blank">粤ICP备13012994号-1</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </article>
+    <script src="./jquery-1.12.1.js"></script>
+    <script>
+        // 工具函数
+        var initSlideBar = function (onSuccess, onFailed) {
+            var startPos = { x: 0, y: 0 },
+                currentPos = { x: 0, y: 0 },
+                This = $('#slide_btn').find('.slider'),
+                maxRight = This.css('right').replace('px', ''),
+                nRight = maxRight,
+                oRight = maxRight,
+                done = false,
+                supportedTouch = true,
+                isDown = false;
+            try { ontouchstart; } catch (e) { supportedTouch = false; }
+            var el = This.get(0);
+            if (supportedTouch) {
+                el.addEventListener('touchstart', function (event) {
+                    startPos = { x: event.changedTouches[0].pageX, y: event.changedTouches[0].pageY };
+                }, false);
+                el.addEventListener('touchmove', function (event) {
+                    event.preventDefault();
+                    currentPos = { x: event.changedTouches[0].pageX, y: event.changedTouches[0].pageY };
+                    nRight = oRight - (currentPos.x - startPos.x);
+                    if (nRight > maxRight) {
+                        //do nothing
+                    } else if (nRight >= 0 && nRight <= maxRight) {
+                        This.css('right', nRight + 'px');
+                    } else {
+                        done = true;
+                    }
+                }, false);
+                el.addEventListener('touchend', function (event) {
+                    if (done && typeof (onSuccess) == 'function' && nRight <= 0) {
+                        onSuccess();
+                    } else if (!done && typeof (onFailed) == 'function') {
+                        onFailed();
+                    }
+                    done = false;
+                    oRight = nRight;
+                    startPos = { x: 0, y: 0 },
+                    currentPos = { x: 0, y: 0 };
+                }, false);
+            } else {
+                function mouseDown(e) {
+                    isDown = true;
+                    startPos = { x: e.pageX, y: e.pageY };
+                    el.addEventListener("mousemove", mouseMove);
+                    el.addEventListener("mouseup", mouseUp);
+                    el.addEventListener("mouseleave", mouseLeave);
+                }
+                function mouseMove(e) {
+                    e.preventDefault();
+                    currentPos = { x: e.pageX, y: e.pageY };
+                    nRight = oRight - (currentPos.x - startPos.x);
+                    if (nRight > maxRight) {
+                        //do nothing
+                    } else if (nRight >= 0 && nRight <= maxRight) {
+                        This.css('right', nRight + 'px');
+                    } else {
+                        done = true;
+                    }
+                }
+                function mouseUp(e) {
+                    if (done && typeof (onSuccess) == 'function' && nRight <= 0) {
+                        onSuccess();
+                    } else if (!done && typeof (onFailed) == 'function') {
+                        onFailed();
+                    }
+                    done = false;
+                    oRight = nRight;
+                    startPos = { x: 0, y: 0 },
+                    currentPos = { x: 0, y: 0 };
+                    isDown = false;
+                    el.removeEventListener("mousemove", mouseMove);
+                    el.removeEventListener("mouseup", mouseUp);
+                    el.removeEventListener("mouseleave", mouseLeave);
+                }
+                function mouseLeave(e) {
+                    if (isDown) {
+                        if (done && typeof (onSuccess) == 'function' && nRight <= 0) {
+                            onSuccess();
+                        } else if (!done && typeof (onFailed) == 'function') {
+                            onFailed();
+                        }
+                        done = false;
+                        oRight = nRight;
+                        startPos = { x: 0, y: 0 },
+                        currentPos = { x: 0, y: 0 };
+                        isDown = false;
+                        el.removeEventListener("mousemove", mouseMove);
+                        el.removeEventListener("mouseup", mouseUp);
+                        el.removeEventListener("mouseleave", mouseLeave);
+                    }
+                }
+                //bind all the mouse events
+                el.addEventListener("mousedown", mouseDown);
+            }
+            var c = 0;
+            setInterval(function () {
+                if (c > 2) {
+                    c = 0;
+                }
+                $('#slide_btn .arr').removeClass('on').eq(c).addClass('on');
+                c++;
+            }, 200);
+        }
+
+        $(function () {
+            // 滑动到最右端
+            initSlideBar(function () {//滑动成功
+                alert('滑到最右端了！');
+                $('#slide_btn').addClass('animated bounce').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+                    $(this).addClass('animated fadeOut');
+                });
+
+            }, function () {//滑动失败
+                alert('未到最右端');
+                $('#slide_btn').addClass('animated headShake').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+                    $(this).removeClass('animated headShake');
+                });
+            });
+        });
+    </script>
+    <script>
+    document.getElementById('year_today').innerHTML = (new Date()).getFullYear(); var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+</body>  
+</html>
